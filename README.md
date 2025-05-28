@@ -1,24 +1,30 @@
 # Malaysian Fake News Detection
 
-This project implements a machine learning-based fake news detection system specifically for news articles in Bahasa Malaysia. The system uses natural language processing and deep learning techniques to classify news articles as either genuine or fake.
+This project implements a machine learning-based fake news detection system specifically for news articles in Bahasa Malaysia. The system uses natural language processing and machine learning techniques to classify news articles as either genuine or fake.
 
 ## Features
 
 - Machine learning model trained on Malaysian news dataset
-- Web interface for real-time fake news detection
+- Real-time fake news detection
 - Support for Bahasa Malaysia text
-- REST API endpoints for integration
-- Modern React-based frontend
-- Flask backend server
+- Text analysis and key terms extraction
+- Confidence scores for predictions
+- User-friendly Streamlit interface
+
+## Live Demo
+
+Visit the live application at: https://malaysian-fake-news-detection.streamlit.app
 
 ## Tech Stack
 
-- **Frontend**: React.js, TailwindCSS
-- **Backend**: Python Flask
-- **ML**: scikit-learn, TensorFlow, Malaya NLP
-- **Database**: SQLite (for caching results)
+- **Frontend & Backend**: Streamlit
+- **ML & Data Processing**: 
+  - scikit-learn
+  - NLTK
+  - pandas
+  - numpy
 
-## Setup Instructions
+## Local Development
 
 1. Clone the repository:
 ```bash
@@ -26,65 +32,40 @@ git clone https://github.com/jorre-bot/malaysian-fake-news-detection.git
 cd malaysian-fake-news-detection
 ```
 
-2. Install Python dependencies:
+2. Install dependencies:
 ```bash
 pip install -r requirements.txt
 ```
 
-3. Install frontend dependencies:
+3. Run the Streamlit app:
 ```bash
-cd frontend
-npm install
+streamlit run streamlit_app.py
 ```
 
-4. Start the backend server:
-```bash
-python app.py
-```
+The application will be available at http://localhost:8501
 
-5. Start the frontend development server:
-```bash
-cd frontend
-npm start
-```
+## Deployment
 
-The application will be available at http://localhost:3000
+This application is deployed using Streamlit Cloud. To deploy your own version:
 
-## API Documentation
-
-### POST /api/detect
-Endpoint for fake news detection
-
-Request body:
-```json
-{
-    "text": "Your news article text here"
-}
-```
-
-Response:
-```json
-{
-    "prediction": "FAKE/REAL",
-    "confidence": 0.95,
-    "analysis": {
-        "key_features": [],
-        "sentiment": ""
-    }
-}
-```
+1. Fork this repository
+2. Sign up for [Streamlit Cloud](https://streamlit.io/cloud)
+3. Create a new app and connect it to your forked repository
+4. Select `streamlit_app.py` as the main file
+5. Deploy!
 
 ## Model Information
 
-The fake news detection model is built using a combination of:
-- Text preprocessing using Malaya NLP library
+The fake news detection model uses:
+- Text preprocessing with NLTK
 - TF-IDF vectorization
-- Deep learning classification using BERT
-
-## License
-
-MIT License
+- Naive Bayes classification
+- English stopwords removal (can be extended for Bahasa Malaysia)
 
 ## Contributing
 
-Contributions are welcome! Please feel free to submit a Pull Request. 
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## License
+
+MIT License 

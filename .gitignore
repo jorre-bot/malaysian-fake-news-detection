@@ -52,6 +52,9 @@ yarn-error.log*
 frontend/build/
 frontend/dist/
 
+# Streamlit
+.streamlit/secrets.toml
+
 # Misc
 .DS_Store
 Thumbs.db 
